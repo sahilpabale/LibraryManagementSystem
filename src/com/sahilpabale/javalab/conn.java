@@ -11,7 +11,7 @@ public class conn {
             c =DriverManager.getConnection("jdbc:mysql://localhost/lib_mgmt","admin","admin");
             s =c.createStatement();
         } catch(Exception e){
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
 }

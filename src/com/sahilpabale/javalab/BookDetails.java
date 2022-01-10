@@ -14,6 +14,17 @@ public class BookDetails extends JFrame implements ActionListener {
     private JTextField search;
     private JButton b1,b2,b3;
 
+    private static ImageIcon createImageIcon(String path) {
+        java.net.URL imgURL = Home.class.getResource(path);
+
+        if (imgURL != null) {
+            return new ImageIcon(imgURL);
+        } else {
+            System.err.println("Couldn't find file: " + path);
+            return null;
+        }
+    }
+
     public static void main(String[] args) {
         new BookDetails().setVisible(true);
     }
@@ -62,7 +73,7 @@ public class BookDetails extends JFrame implements ActionListener {
         JButton b1 = new JButton("Search");
         b1.addActionListener(this);
         b1.setBorder(new LineBorder(new Color(255, 20, 147), 2, true));
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("library/management/system/icons/eight.png"));
+        ImageIcon i1 = createImageIcon("./icons/eight.png");
         Image i2 = i1.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         b1.setIcon(i3);
@@ -73,7 +84,7 @@ public class BookDetails extends JFrame implements ActionListener {
 
         JButton b2 = new JButton("Delete");
         b2.addActionListener(this);
-        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("library/management/system/icons/nineth.png"));
+        ImageIcon i4 = createImageIcon("./icons/nineth.png");
         Image i5 = i4.getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT);
         ImageIcon i6 = new ImageIcon(i5);
         b2.setIcon(i6);
@@ -111,7 +122,7 @@ public class BookDetails extends JFrame implements ActionListener {
         });
         l3.setForeground(Color.GRAY);
         l3.setFont(new Font("Trebuchet MS", Font.BOLD, 18));
-        ImageIcon i7 = new ImageIcon(ClassLoader.getSystemResource("library/management/system/icons/tenth.png"));
+        ImageIcon i7 = createImageIcon("./icons/tenth.png");
         Image i8 = i7.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT);
         ImageIcon i9 = new ImageIcon(i8);
         l3.setIcon(i9);
